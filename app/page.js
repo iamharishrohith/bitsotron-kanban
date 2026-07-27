@@ -10,6 +10,3067 @@ export default function Home() {
 (() => {
     'use strict';
 
+    
+    // ═══════ SEEDED LOCAL DATA (NO-DATABASE MODE) ═══════
+    const SEED_TASKS = [
+        {
+                "id": "9311-fb2f",
+                "title": "Internship Schedule Planning",
+                "description": "Planned the 3-week internship schedule and discussed the Kanban board app requirements with the team.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-13",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1783933200000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1783936800000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1783962000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1783933200000,
+                "updatedAt": 1783962000000
+        },
+        {
+                "id": "437f-3348",
+                "title": "Kanban Layout Research",
+                "description": "Studied Kanban board grid designs and sketched initial card and column structures on paper.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-13",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1783933200000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1783936800000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1783962000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1783933200000,
+                "updatedAt": 1783962000000
+        },
+        {
+                "id": "ea80-fbab",
+                "title": "Repository & Next.js Setup",
+                "description": "Initialized local git repository and configured folder structure templates for the Next.js app.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-13",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1783933200000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1783936800000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1783962000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1783933200000,
+                "updatedAt": 1783962000000
+        },
+        {
+                "id": "e5fe-e789",
+                "title": "Workflow Status Outlining",
+                "description": "Drafted definitions for board columns (Backlog, To Do, In Progress, Review, Done) and task rules.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-13",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1783933200000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1783936800000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1783962000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1783933200000,
+                "updatedAt": 1783962000000
+        },
+        {
+                "id": "eaf8-4654",
+                "title": "PostgreSQL Schema Design",
+                "description": "Created the initial database tables design for tasks, daily updates, and activity logging.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-14",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784019600000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784023200000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784048400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784019600000,
+                "updatedAt": 1784048400000
+        },
+        {
+                "id": "9c31-0f7a",
+                "title": "Coded Board HTML Skeleton",
+                "description": "Wrote basic HTML elements for Kanban board headers, column sections, and navigation bars. (Continued)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-14",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784019600000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784023200000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784048400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784019600000,
+                "updatedAt": 1784048400000
+        },
+        {
+                "id": "b7ca-9f26",
+                "title": "Neon DB Connection Setup",
+                "description": "Created Postgres connection scripts (db.js) and configured database parameters. (Continued)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-14",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784019600000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784023200000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784048400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784019600000,
+                "updatedAt": 1784048400000
+        },
+        {
+                "id": "e02f-7f55",
+                "title": "Project Configurations Setup",
+                "description": "Defined user credential structures, roles metadata, and colors configuration. (Continued)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-14",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784019600000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784023200000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784048400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784019600000,
+                "updatedAt": 1784048400000
+        },
+        {
+                "id": "d477-dde9",
+                "title": "DB Setup Script Creation",
+                "description": "Wrote local SQL scripts to initialize tables and relationships for the Kanban database schema.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-15",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784106000000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784109600000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784134800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784106000000,
+                "updatedAt": 1784134800000
+        },
+        {
+                "id": "c195-6f69",
+                "title": "Styled Card UI Elements",
+                "description": "Completed CSS styles for board task cards, user initials circles, and status badge designs. (Continued from July 14)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-15",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784106000000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784109600000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784134800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784106000000,
+                "updatedAt": 1784134800000
+        },
+        {
+                "id": "7c9c-8269",
+                "title": "Coded Get Tasks API Route",
+                "description": "Wrote backend API controllers (`/api/tasks`) in Next.js to retrieve and display database rows.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-15",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784106000000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784109600000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784134800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784106000000,
+                "updatedAt": 1784134800000
+        },
+        {
+                "id": "81dc-cc2c",
+                "title": "Login Flow Integration Check",
+                "description": "Assisted Akilan in verifying credentials match and testing basic login overlay views.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-15",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784106000000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784109600000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784134800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784106000000,
+                "updatedAt": 1784134800000
+        },
+        {
+                "id": "7a3a-0a7c",
+                "title": "Bitsotron Website Kickoff",
+                "description": "Conducted a team meeting to allocate website pages (Homepage, About Us, Services, FAQ).",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-16",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784192400000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784196000000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784221200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784192400000,
+                "updatedAt": 1784221200000
+        },
+        {
+                "id": "f4f4-4610",
+                "title": "Wireframing Homepage Grid",
+                "description": "Created basic Figma layout sketch of the landing page, Hero section, and features structure.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-16",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784192400000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784196000000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784221200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784192400000,
+                "updatedAt": 1784221200000
+        },
+        {
+                "id": "d3f4-4664",
+                "title": "Global CSS Design Config",
+                "description": "Defined CSS theme tokens for HSL Tailored color system, typography scale, and button shapes.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-16",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784192400000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784196000000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784221200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784192400000,
+                "updatedAt": 1784221200000
+        },
+        {
+                "id": "42dc-0034",
+                "title": "Website Copywriting Planning",
+                "description": "Outlined homepage copywriting content details and prepared initial product description sheets. (Continued)",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-16",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784192400000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784196000000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784221200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784192400000,
+                "updatedAt": 1784221200000
+        },
+        {
+                "id": "9fd5-21be",
+                "title": "Review UI Design Reference",
+                "description": "Reviewed the landing page layout wireframes and selected HSL Tailored color guidelines.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-17",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784278800000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784282400000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784307600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784278800000,
+                "updatedAt": 1784307600000
+        },
+        {
+                "id": "8992-876d",
+                "title": "Homepage HTML Setup",
+                "description": "Coded structural HTML wrappers for Navbar, Hero section headers, and text boxes. (Continued)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-17",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784278800000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784282400000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784307600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784278800000,
+                "updatedAt": 1784307600000
+        },
+        {
+                "id": "ab6a-5734",
+                "title": "Responsive Layout Shells",
+                "description": "Wrote layout CSS styles and responsive grids to align sections on desktop and tablet. (Continued)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-17",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784278800000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784282400000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784307600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784278800000,
+                "updatedAt": 1784307600000
+        },
+        {
+                "id": "a3f3-14b4",
+                "title": "Compile Landing Page Copy text",
+                "description": "Wrote primary landing page marketing texts, headers, and description paragraphs. (Continued from July 16)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-17",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784278800000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784282400000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784307600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784278800000,
+                "updatedAt": 1784307600000
+        },
+        {
+                "id": "6700-fae5",
+                "title": "Static Page Layout Validation",
+                "description": "Tested website sections for mobile view compatibility and discussed UI layout improvements.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-18",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784365200000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784368800000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784394000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784365200000,
+                "updatedAt": 1784394000000
+        },
+        {
+                "id": "95a3-e6c6",
+                "title": "Coding Hero & Services sections",
+                "description": "Implemented initial CSS styling for the page layout, aligning features and text spacing. (Continued from July 17)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-18",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784365200000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784368800000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784394000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784365200000,
+                "updatedAt": 1784394000000
+        },
+        {
+                "id": "cb37-d69b",
+                "title": "Homepage Mobile Menu JS",
+                "description": "Programmed hamburger menu button triggers using vanilla JS overlay toggle events. (Continued from July 17)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-18",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784365200000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784368800000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784394000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784365200000,
+                "updatedAt": 1784394000000
+        },
+        {
+                "id": "2636-522f",
+                "title": "Draft Contact Page Mockups",
+                "description": "Helped Keerthika design Contact Us page layout sections and form fields structure. (Continued)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-18",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784365200000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784368800000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784394000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784365200000,
+                "updatedAt": 1784394000000
+        },
+        {
+                "id": "294a-65d4",
+                "title": "Next Sprint Planning Sync",
+                "description": "Met with team members to discuss homepage styling progress, review blockers, and schedule next tasks.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-20",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784538000000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784541600000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784566800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784538000000,
+                "updatedAt": 1784566800000
+        },
+        {
+                "id": "d652-7ddc",
+                "title": "About Us Page Skeleton",
+                "description": "Developed the layout structure and team profile grid section for the About Us page.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-20",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784538000000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784541600000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784566800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784538000000,
+                "updatedAt": 1784566800000
+        },
+        {
+                "id": "7ecf-311c",
+                "title": "Scroll Trigger Transitions",
+                "description": "Added Intersection Observer script triggers to run fade-in animation transitions during page scroll.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-20",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784538000000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784541600000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784566800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784538000000,
+                "updatedAt": 1784566800000
+        },
+        {
+                "id": "edb6-e144",
+                "title": "Spell Check & Website Copy Review",
+                "description": "Read through current website texts to check grammar consistency and heading alignment.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-20",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784538000000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784541600000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784566800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784538000000,
+                "updatedAt": 1784566800000
+        },
+        {
+                "id": "0a7b-a7e9",
+                "title": "Mock Presentation Planning",
+                "description": "Organized team presentation order and outlined design feedback parameters for our team reviews.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-21",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784624400000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784628000000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784653200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784624400000,
+                "updatedAt": 1784653200000
+        },
+        {
+                "id": "3ed5-96b4",
+                "title": "Dynamic Grid Layout Review",
+                "description": "Tested About Us layout on browser and updated styling styles for text alignment and margins.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-21",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784624400000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784628000000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784653200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784624400000,
+                "updatedAt": 1784653200000
+        },
+        {
+                "id": "f34a-fa29",
+                "title": "Responsive Font Adjustments",
+                "description": "Fixed spacing overflow bugs on smaller screens using CSS clamp functions and viewport units.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-21",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784624400000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784628000000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784653200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784624400000,
+                "updatedAt": 1784653200000
+        },
+        {
+                "id": "4018-ac06",
+                "title": "MSME Hackathon PPT Research",
+                "description": "Researched competitor ideas and gathered problem statements for the MSME Hackathon 6.0 deck.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-21",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784624400000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784628000000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784653200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784624400000,
+                "updatedAt": 1784653200000
+        },
+        {
+                "id": "1084-fb8d",
+                "title": "Presentation Outlining",
+                "description": "Aligned MSME Hackathon rules and guidelines with the product presentation strategy for the deck slides.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-22",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784710800000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784714400000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784739600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784710800000,
+                "updatedAt": 1784739600000
+        },
+        {
+                "id": "6b31-cf5d",
+                "title": "Feedback Page Form Layout",
+                "description": "Created FAQ accordions layout and feedback form fields in static HTML page views.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-22",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784710800000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784714400000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784739600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784710800000,
+                "updatedAt": 1784739600000
+        },
+        {
+                "id": "2b99-f999",
+                "title": "Contact Form Validation JS",
+                "description": "Wrote frontend JavaScript checks for the contact form email syntax and empty input errors.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-22",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784710800000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784714400000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784739600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784710800000,
+                "updatedAt": 1784739600000
+        },
+        {
+                "id": "f2eb-8dd7",
+                "title": "PPT Deck Structure Outlining",
+                "description": "Created presentation outline slides: Problem statement, Proposed Solution, and tech stack.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-22",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784710800000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784714400000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784739600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784710800000,
+                "updatedAt": 1784739600000
+        },
+        {
+                "id": "122c-f655",
+                "title": "PPT Slide Outline Review",
+                "description": "Collaborated with Subhaharini on slide deck layouts, specifically reviewing business model and target user slides.",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-23",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784797200000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784800800000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784826000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784797200000,
+                "updatedAt": 1784826000000
+        },
+        {
+                "id": "a3e8-5d57",
+                "title": "Website Styling Refinement",
+                "description": "Made styling updates and changed margin padding on landing pages based on previous team reviews. (Continued)",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-23",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784797200000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784800800000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784826000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784797200000,
+                "updatedAt": 1784826000000
+        },
+        {
+                "id": "96cf-d4c9",
+                "title": "Contact Form Validation Tuning",
+                "description": "Refined form validation errors styling and tested animations for inline warning popups. (Continued)",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-23",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784797200000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784800800000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784826000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784797200000,
+                "updatedAt": 1784826000000
+        },
+        {
+                "id": "86df-08dc",
+                "title": "Coded Pitch Slides (1-5)",
+                "description": "Drafted PPT slides covering project description, technical specs, and team contribution info. (Continued)",
+                "status": "done",
+                "priority": "high",
+                "dueDate": "2026-07-23",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784797200000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784800800000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784826000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784797200000,
+                "updatedAt": 1784826000000
+        },
+        {
+                "id": "54e5-4134",
+                "title": "Business Viability Outline",
+                "description": "Drafted content points for product pricing, target market, and financial feasibility slide updates.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-24",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784883600000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784887200000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784912400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784883600000,
+                "updatedAt": 1784912400000
+        },
+        {
+                "id": "67b2-7620",
+                "title": "Design PPT Visual Assets",
+                "description": "Designed custom diagrams, icons, and schema graphics for the MSME pitch deck presentation.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-24",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784883600000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784887200000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784912400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784883600000,
+                "updatedAt": 1784912400000
+        },
+        {
+                "id": "e483-c015",
+                "title": "Layout Adjustments For Slide Views",
+                "description": "Wrote slide display CSS templates to preview presentation flows directly in-app.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-24",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784883600000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784887200000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784912400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784883600000,
+                "updatedAt": 1784912400000
+        },
+        {
+                "id": "c1df-399c",
+                "title": "Coded Pitch Slides (6-10)",
+                "description": "Created slides covering financial feasibility, business model, and project advantages. (Continued from July 22)",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-24",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784883600000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784887200000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784912400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784883600000,
+                "updatedAt": 1784912400000
+        },
+        {
+                "id": "2d74-1f57",
+                "title": "Mock Presentation Dry-Run",
+                "description": "Hosted a dry-run presentation, reviewed pitch timings, and suggested slide improvement points.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-25",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784970000000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1784973600000
+                        },
+                        {
+                                "text": "Harish completed the task (moved to Done)",
+                                "time": 1784998800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784970000000,
+                "updatedAt": 1784998800000
+        },
+        {
+                "id": "108c-f624",
+                "title": "Static Web Image Optimizing",
+                "description": "Minified custom SVGs, converted raw images to WebP, and removed unused CSS style lines.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-25",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784970000000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1784973600000
+                        },
+                        {
+                                "text": "Keerthika completed the task (moved to Done)",
+                                "time": 1784998800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784970000000,
+                "updatedAt": 1784998800000
+        },
+        {
+                "id": "e007-5c83",
+                "title": "Fix Next.js Build Warnings",
+                "description": "Ran project build checks, cleared ESLint warning logs, and resolved CSS import errors.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-25",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784970000000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1784973600000
+                        },
+                        {
+                                "text": "Akilan completed the task (moved to Done)",
+                                "time": 1784998800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784970000000,
+                "updatedAt": 1784998800000
+        },
+        {
+                "id": "3923-af5c",
+                "title": "Refine Slides Post Dry-Run",
+                "description": "Updated presentation slides text content and diagrams based on TL mock review feedback.",
+                "status": "done",
+                "priority": "medium",
+                "dueDate": "2026-07-25",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1784970000000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1784973600000
+                        },
+                        {
+                                "text": "Subhaharini completed the task (moved to Done)",
+                                "time": 1784998800000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1784970000000,
+                "updatedAt": 1784998800000
+        },
+        {
+                "id": "6725-6937",
+                "title": "Lead Client Demo Meeting",
+                "description": "Presented the live static website and PPT deck to the client, taking notes of all suggestions.",
+                "status": "progress",
+                "priority": "high",
+                "dueDate": "2026-07-27",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785142800000
+                        },
+                        {
+                                "text": "Harish accepted the task (moved to In Progress)",
+                                "time": 1785146400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785142800000,
+                "updatedAt": 1785146400000
+        },
+        {
+                "id": "f5f3-fe67",
+                "title": "Implement Client Feedback Tweaks",
+                "description": "Adjusted color palettes and alignment of page buttons based on notes from client demo meeting.",
+                "status": "progress",
+                "priority": "high",
+                "dueDate": "2026-07-27",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785142800000
+                        },
+                        {
+                                "text": "Keerthika accepted the task (moved to In Progress)",
+                                "time": 1785146400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785142800000,
+                "updatedAt": 1785146400000
+        },
+        {
+                "id": "0596-903d",
+                "title": "Animate Live UI Hovers",
+                "description": "Added transition curves for live site cards and navbar hover states per client feedback notes.",
+                "status": "review",
+                "priority": "high",
+                "dueDate": "2026-07-27",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785142800000
+                        },
+                        {
+                                "text": "Akilan accepted the task (moved to In Progress)",
+                                "time": 1785146400000
+                        },
+                        {
+                                "text": "Akilan requested code review (moved to Code Review)",
+                                "time": 1785168000000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785142800000,
+                "updatedAt": 1785168000000
+        },
+        {
+                "id": "1999-7fa4",
+                "title": "Compile Client Meeting Notes",
+                "description": "Recorded client recommendations during the demo meeting and formatted feedback checklist.",
+                "status": "progress",
+                "priority": "high",
+                "dueDate": "2026-07-27",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785142800000
+                        },
+                        {
+                                "text": "Subhaharini accepted the task (moved to In Progress)",
+                                "time": 1785146400000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785142800000,
+                "updatedAt": 1785146400000
+        },
+        {
+                "id": "4bac-c15c",
+                "title": "Consolidate Report Outline",
+                "description": "Coordinated final report structures and collected individual weekly internship summaries from team members.",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-28",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785229200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785229200000,
+                "updatedAt": 1785229200000
+        },
+        {
+                "id": "946b-94e7",
+                "title": "Draft Developer Documentation",
+                "description": "Writing developer hand-off guides, local setup instructions, and code folder hierarchy details. (Continued)",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-28",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785229200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785229200000,
+                "updatedAt": 1785229200000
+        },
+        {
+                "id": "d1d0-e7ef",
+                "title": "Setup Vercel Deployment Link",
+                "description": "Configuring live domain details, connecting GitHub triggers, and building the production package. (Continued)",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-28",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785229200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785229200000,
+                "updatedAt": 1785229200000
+        },
+        {
+                "id": "38d5-eccb",
+                "title": "Draft Report Intro & Scope",
+                "description": "Drafting internship report introductory sections, objectives guidelines, and index details. (Continued)",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-28",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785229200000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785229200000,
+                "updatedAt": 1785229200000
+        },
+        {
+                "id": "a360-7bd2",
+                "title": "Review Team Report Drafts",
+                "description": "Reviewing SDE work summaries and compiled report drafts to check formatting consistency. (Continued)",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-29",
+                "assignees": [
+                        "tl"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785315600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785315600000,
+                "updatedAt": 1785315600000
+        },
+        {
+                "id": "3757-61aa",
+                "title": "Compile Personal SDE Logs",
+                "description": "Gathering individual work milestones, code lines summary, and creating personal report files.",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-29",
+                "assignees": [
+                        "sde1"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785315600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785315600000,
+                "updatedAt": 1785315600000
+        },
+        {
+                "id": "baae-2671",
+                "title": "Live Link Post-Deploy Test",
+                "description": "Perform end-to-end check of form submissions, check site loading speed, and test live database links.",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-29",
+                "assignees": [
+                        "sde2"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785315600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785315600000,
+                "updatedAt": 1785315600000
+        },
+        {
+                "id": "222f-4f9d",
+                "title": "Compile Full Internship Report",
+                "description": "Assembling team work summaries and formatting the compiled report draft for final reviews.",
+                "status": "todo",
+                "priority": "medium",
+                "dueDate": "2026-07-29",
+                "assignees": [
+                        "sde3"
+                ],
+                "activity": [
+                        {
+                                "text": "Task created by Harish (TL)",
+                                "time": 1785315600000
+                        }
+                ],
+                "createdBy": "tl",
+                "createdAt": 1785315600000,
+                "updatedAt": 1785315600000
+        }
+];
+    
+    const SEED_STATUS_LOGS = [
+        {
+                "id": "3909-c396",
+                "task_id": "9311-fb2f",
+                "task_title": "Internship Schedule Planning",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1783933200000
+        },
+        {
+                "id": "f719-44b2",
+                "task_id": "9311-fb2f",
+                "task_title": "Internship Schedule Planning",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1783936800000
+        },
+        {
+                "id": "f868-fc1d",
+                "task_id": "9311-fb2f",
+                "task_title": "Internship Schedule Planning",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1783962000000
+        },
+        {
+                "id": "314c-ed21",
+                "task_id": "437f-3348",
+                "task_title": "Kanban Layout Research",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1783933200000
+        },
+        {
+                "id": "9961-8630",
+                "task_id": "437f-3348",
+                "task_title": "Kanban Layout Research",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1783936800000
+        },
+        {
+                "id": "1056-5945",
+                "task_id": "437f-3348",
+                "task_title": "Kanban Layout Research",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1783962000000
+        },
+        {
+                "id": "7f30-bef5",
+                "task_id": "ea80-fbab",
+                "task_title": "Repository & Next.js Setup",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1783933200000
+        },
+        {
+                "id": "a5aa-5c09",
+                "task_id": "ea80-fbab",
+                "task_title": "Repository & Next.js Setup",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1783936800000
+        },
+        {
+                "id": "61b8-77f6",
+                "task_id": "ea80-fbab",
+                "task_title": "Repository & Next.js Setup",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1783962000000
+        },
+        {
+                "id": "fd9c-70df",
+                "task_id": "e5fe-e789",
+                "task_title": "Workflow Status Outlining",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1783933200000
+        },
+        {
+                "id": "949c-a31f",
+                "task_id": "e5fe-e789",
+                "task_title": "Workflow Status Outlining",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1783936800000
+        },
+        {
+                "id": "4180-32e3",
+                "task_id": "e5fe-e789",
+                "task_title": "Workflow Status Outlining",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1783962000000
+        },
+        {
+                "id": "af1a-702b",
+                "task_id": "eaf8-4654",
+                "task_title": "PostgreSQL Schema Design",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784019600000
+        },
+        {
+                "id": "fa92-c51d",
+                "task_id": "eaf8-4654",
+                "task_title": "PostgreSQL Schema Design",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784023200000
+        },
+        {
+                "id": "ea56-bc55",
+                "task_id": "eaf8-4654",
+                "task_title": "PostgreSQL Schema Design",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784048400000
+        },
+        {
+                "id": "a632-9c3e",
+                "task_id": "9c31-0f7a",
+                "task_title": "Coded Board HTML Skeleton",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784019600000
+        },
+        {
+                "id": "7ed7-e7ab",
+                "task_id": "9c31-0f7a",
+                "task_title": "Coded Board HTML Skeleton",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784023200000
+        },
+        {
+                "id": "5634-6d5f",
+                "task_id": "9c31-0f7a",
+                "task_title": "Coded Board HTML Skeleton",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784048400000
+        },
+        {
+                "id": "4163-e3b7",
+                "task_id": "b7ca-9f26",
+                "task_title": "Neon DB Connection Setup",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784019600000
+        },
+        {
+                "id": "7d21-ccf4",
+                "task_id": "b7ca-9f26",
+                "task_title": "Neon DB Connection Setup",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784023200000
+        },
+        {
+                "id": "4745-047f",
+                "task_id": "b7ca-9f26",
+                "task_title": "Neon DB Connection Setup",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784048400000
+        },
+        {
+                "id": "b752-2647",
+                "task_id": "e02f-7f55",
+                "task_title": "Project Configurations Setup",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784019600000
+        },
+        {
+                "id": "86aa-2464",
+                "task_id": "e02f-7f55",
+                "task_title": "Project Configurations Setup",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784023200000
+        },
+        {
+                "id": "7de5-c8d8",
+                "task_id": "e02f-7f55",
+                "task_title": "Project Configurations Setup",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784048400000
+        },
+        {
+                "id": "b3f4-6cc6",
+                "task_id": "d477-dde9",
+                "task_title": "DB Setup Script Creation",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784106000000
+        },
+        {
+                "id": "c36a-cdda",
+                "task_id": "d477-dde9",
+                "task_title": "DB Setup Script Creation",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784109600000
+        },
+        {
+                "id": "3e99-f540",
+                "task_id": "d477-dde9",
+                "task_title": "DB Setup Script Creation",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784134800000
+        },
+        {
+                "id": "a070-abfb",
+                "task_id": "c195-6f69",
+                "task_title": "Styled Card UI Elements",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784106000000
+        },
+        {
+                "id": "070c-7ca3",
+                "task_id": "c195-6f69",
+                "task_title": "Styled Card UI Elements",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784109600000
+        },
+        {
+                "id": "6349-1d1a",
+                "task_id": "c195-6f69",
+                "task_title": "Styled Card UI Elements",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784134800000
+        },
+        {
+                "id": "9629-71df",
+                "task_id": "7c9c-8269",
+                "task_title": "Coded Get Tasks API Route",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784106000000
+        },
+        {
+                "id": "a5a5-b89b",
+                "task_id": "7c9c-8269",
+                "task_title": "Coded Get Tasks API Route",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784109600000
+        },
+        {
+                "id": "21c3-de90",
+                "task_id": "7c9c-8269",
+                "task_title": "Coded Get Tasks API Route",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784134800000
+        },
+        {
+                "id": "8649-2978",
+                "task_id": "81dc-cc2c",
+                "task_title": "Login Flow Integration Check",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784106000000
+        },
+        {
+                "id": "6fb0-0f46",
+                "task_id": "81dc-cc2c",
+                "task_title": "Login Flow Integration Check",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784109600000
+        },
+        {
+                "id": "2b89-ba7f",
+                "task_id": "81dc-cc2c",
+                "task_title": "Login Flow Integration Check",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784134800000
+        },
+        {
+                "id": "1575-c64c",
+                "task_id": "7a3a-0a7c",
+                "task_title": "Bitsotron Website Kickoff",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784192400000
+        },
+        {
+                "id": "5b1d-2497",
+                "task_id": "7a3a-0a7c",
+                "task_title": "Bitsotron Website Kickoff",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784196000000
+        },
+        {
+                "id": "8289-9db1",
+                "task_id": "7a3a-0a7c",
+                "task_title": "Bitsotron Website Kickoff",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784221200000
+        },
+        {
+                "id": "4331-a91f",
+                "task_id": "f4f4-4610",
+                "task_title": "Wireframing Homepage Grid",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784192400000
+        },
+        {
+                "id": "0ac5-5a16",
+                "task_id": "f4f4-4610",
+                "task_title": "Wireframing Homepage Grid",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784196000000
+        },
+        {
+                "id": "242f-e059",
+                "task_id": "f4f4-4610",
+                "task_title": "Wireframing Homepage Grid",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784221200000
+        },
+        {
+                "id": "7248-d02e",
+                "task_id": "d3f4-4664",
+                "task_title": "Global CSS Design Config",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784192400000
+        },
+        {
+                "id": "ce92-29b8",
+                "task_id": "d3f4-4664",
+                "task_title": "Global CSS Design Config",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784196000000
+        },
+        {
+                "id": "777b-cd70",
+                "task_id": "d3f4-4664",
+                "task_title": "Global CSS Design Config",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784221200000
+        },
+        {
+                "id": "6ca5-35fb",
+                "task_id": "42dc-0034",
+                "task_title": "Website Copywriting Planning",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784192400000
+        },
+        {
+                "id": "6d14-5870",
+                "task_id": "42dc-0034",
+                "task_title": "Website Copywriting Planning",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784196000000
+        },
+        {
+                "id": "9acb-2256",
+                "task_id": "42dc-0034",
+                "task_title": "Website Copywriting Planning",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784221200000
+        },
+        {
+                "id": "52f7-d5ed",
+                "task_id": "9fd5-21be",
+                "task_title": "Review UI Design Reference",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784278800000
+        },
+        {
+                "id": "7c29-0975",
+                "task_id": "9fd5-21be",
+                "task_title": "Review UI Design Reference",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784282400000
+        },
+        {
+                "id": "d528-9f01",
+                "task_id": "9fd5-21be",
+                "task_title": "Review UI Design Reference",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784307600000
+        },
+        {
+                "id": "720e-182f",
+                "task_id": "8992-876d",
+                "task_title": "Homepage HTML Setup",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784278800000
+        },
+        {
+                "id": "c7a6-6545",
+                "task_id": "8992-876d",
+                "task_title": "Homepage HTML Setup",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784282400000
+        },
+        {
+                "id": "f744-b028",
+                "task_id": "8992-876d",
+                "task_title": "Homepage HTML Setup",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784307600000
+        },
+        {
+                "id": "21e1-d67d",
+                "task_id": "ab6a-5734",
+                "task_title": "Responsive Layout Shells",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784278800000
+        },
+        {
+                "id": "5849-169f",
+                "task_id": "ab6a-5734",
+                "task_title": "Responsive Layout Shells",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784282400000
+        },
+        {
+                "id": "06a5-0c90",
+                "task_id": "ab6a-5734",
+                "task_title": "Responsive Layout Shells",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784307600000
+        },
+        {
+                "id": "1f25-2e0e",
+                "task_id": "a3f3-14b4",
+                "task_title": "Compile Landing Page Copy text",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784278800000
+        },
+        {
+                "id": "30f3-d689",
+                "task_id": "a3f3-14b4",
+                "task_title": "Compile Landing Page Copy text",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784282400000
+        },
+        {
+                "id": "9e74-dec0",
+                "task_id": "a3f3-14b4",
+                "task_title": "Compile Landing Page Copy text",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784307600000
+        },
+        {
+                "id": "7f41-7593",
+                "task_id": "6700-fae5",
+                "task_title": "Static Page Layout Validation",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784365200000
+        },
+        {
+                "id": "82b4-fe9a",
+                "task_id": "6700-fae5",
+                "task_title": "Static Page Layout Validation",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784368800000
+        },
+        {
+                "id": "5067-60c3",
+                "task_id": "6700-fae5",
+                "task_title": "Static Page Layout Validation",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784394000000
+        },
+        {
+                "id": "03db-68de",
+                "task_id": "95a3-e6c6",
+                "task_title": "Coding Hero & Services sections",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784365200000
+        },
+        {
+                "id": "40a6-5bef",
+                "task_id": "95a3-e6c6",
+                "task_title": "Coding Hero & Services sections",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784368800000
+        },
+        {
+                "id": "0bdd-f36e",
+                "task_id": "95a3-e6c6",
+                "task_title": "Coding Hero & Services sections",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784394000000
+        },
+        {
+                "id": "befc-fd23",
+                "task_id": "cb37-d69b",
+                "task_title": "Homepage Mobile Menu JS",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784365200000
+        },
+        {
+                "id": "5899-c9bc",
+                "task_id": "cb37-d69b",
+                "task_title": "Homepage Mobile Menu JS",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784368800000
+        },
+        {
+                "id": "9fe2-1aa9",
+                "task_id": "cb37-d69b",
+                "task_title": "Homepage Mobile Menu JS",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784394000000
+        },
+        {
+                "id": "f67c-da18",
+                "task_id": "2636-522f",
+                "task_title": "Draft Contact Page Mockups",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784365200000
+        },
+        {
+                "id": "f7a8-9e8c",
+                "task_id": "2636-522f",
+                "task_title": "Draft Contact Page Mockups",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784368800000
+        },
+        {
+                "id": "18c9-c410",
+                "task_id": "2636-522f",
+                "task_title": "Draft Contact Page Mockups",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784394000000
+        },
+        {
+                "id": "c2b9-7c40",
+                "task_id": "294a-65d4",
+                "task_title": "Next Sprint Planning Sync",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784538000000
+        },
+        {
+                "id": "1ebc-2528",
+                "task_id": "294a-65d4",
+                "task_title": "Next Sprint Planning Sync",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784541600000
+        },
+        {
+                "id": "7195-a6a5",
+                "task_id": "294a-65d4",
+                "task_title": "Next Sprint Planning Sync",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784566800000
+        },
+        {
+                "id": "93e2-bba9",
+                "task_id": "d652-7ddc",
+                "task_title": "About Us Page Skeleton",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784538000000
+        },
+        {
+                "id": "1ca4-d2b6",
+                "task_id": "d652-7ddc",
+                "task_title": "About Us Page Skeleton",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784541600000
+        },
+        {
+                "id": "667e-6826",
+                "task_id": "d652-7ddc",
+                "task_title": "About Us Page Skeleton",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784566800000
+        },
+        {
+                "id": "a7d6-c43d",
+                "task_id": "7ecf-311c",
+                "task_title": "Scroll Trigger Transitions",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784538000000
+        },
+        {
+                "id": "d23f-fe51",
+                "task_id": "7ecf-311c",
+                "task_title": "Scroll Trigger Transitions",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784541600000
+        },
+        {
+                "id": "2b85-b764",
+                "task_id": "7ecf-311c",
+                "task_title": "Scroll Trigger Transitions",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784566800000
+        },
+        {
+                "id": "63bb-c15a",
+                "task_id": "edb6-e144",
+                "task_title": "Spell Check & Website Copy Review",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784538000000
+        },
+        {
+                "id": "5cd3-0975",
+                "task_id": "edb6-e144",
+                "task_title": "Spell Check & Website Copy Review",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784541600000
+        },
+        {
+                "id": "fe22-5727",
+                "task_id": "edb6-e144",
+                "task_title": "Spell Check & Website Copy Review",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784566800000
+        },
+        {
+                "id": "55d0-7a64",
+                "task_id": "0a7b-a7e9",
+                "task_title": "Mock Presentation Planning",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784624400000
+        },
+        {
+                "id": "b032-43e5",
+                "task_id": "0a7b-a7e9",
+                "task_title": "Mock Presentation Planning",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784628000000
+        },
+        {
+                "id": "5cc6-0eed",
+                "task_id": "0a7b-a7e9",
+                "task_title": "Mock Presentation Planning",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784653200000
+        },
+        {
+                "id": "2b11-a191",
+                "task_id": "3ed5-96b4",
+                "task_title": "Dynamic Grid Layout Review",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784624400000
+        },
+        {
+                "id": "45ca-600c",
+                "task_id": "3ed5-96b4",
+                "task_title": "Dynamic Grid Layout Review",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784628000000
+        },
+        {
+                "id": "fbed-0848",
+                "task_id": "3ed5-96b4",
+                "task_title": "Dynamic Grid Layout Review",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784653200000
+        },
+        {
+                "id": "1f76-a65d",
+                "task_id": "f34a-fa29",
+                "task_title": "Responsive Font Adjustments",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784624400000
+        },
+        {
+                "id": "691b-c6b8",
+                "task_id": "f34a-fa29",
+                "task_title": "Responsive Font Adjustments",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784628000000
+        },
+        {
+                "id": "bcc9-8617",
+                "task_id": "f34a-fa29",
+                "task_title": "Responsive Font Adjustments",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784653200000
+        },
+        {
+                "id": "9cbb-aafa",
+                "task_id": "4018-ac06",
+                "task_title": "MSME Hackathon PPT Research",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784624400000
+        },
+        {
+                "id": "2baa-b6e8",
+                "task_id": "4018-ac06",
+                "task_title": "MSME Hackathon PPT Research",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784628000000
+        },
+        {
+                "id": "222c-dba4",
+                "task_id": "4018-ac06",
+                "task_title": "MSME Hackathon PPT Research",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784653200000
+        },
+        {
+                "id": "8346-7c84",
+                "task_id": "1084-fb8d",
+                "task_title": "Presentation Outlining",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784710800000
+        },
+        {
+                "id": "7938-35c4",
+                "task_id": "1084-fb8d",
+                "task_title": "Presentation Outlining",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784714400000
+        },
+        {
+                "id": "2383-cfda",
+                "task_id": "1084-fb8d",
+                "task_title": "Presentation Outlining",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784739600000
+        },
+        {
+                "id": "38b7-7313",
+                "task_id": "6b31-cf5d",
+                "task_title": "Feedback Page Form Layout",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784710800000
+        },
+        {
+                "id": "030d-3bf9",
+                "task_id": "6b31-cf5d",
+                "task_title": "Feedback Page Form Layout",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784714400000
+        },
+        {
+                "id": "d8d2-0258",
+                "task_id": "6b31-cf5d",
+                "task_title": "Feedback Page Form Layout",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784739600000
+        },
+        {
+                "id": "91eb-16a6",
+                "task_id": "2b99-f999",
+                "task_title": "Contact Form Validation JS",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784710800000
+        },
+        {
+                "id": "3666-03c2",
+                "task_id": "2b99-f999",
+                "task_title": "Contact Form Validation JS",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784714400000
+        },
+        {
+                "id": "1977-e6a5",
+                "task_id": "2b99-f999",
+                "task_title": "Contact Form Validation JS",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784739600000
+        },
+        {
+                "id": "663a-61a9",
+                "task_id": "f2eb-8dd7",
+                "task_title": "PPT Deck Structure Outlining",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784710800000
+        },
+        {
+                "id": "2fc8-9ceb",
+                "task_id": "f2eb-8dd7",
+                "task_title": "PPT Deck Structure Outlining",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784714400000
+        },
+        {
+                "id": "77f6-1c37",
+                "task_id": "f2eb-8dd7",
+                "task_title": "PPT Deck Structure Outlining",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784739600000
+        },
+        {
+                "id": "b8c3-70b3",
+                "task_id": "122c-f655",
+                "task_title": "PPT Slide Outline Review",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784797200000
+        },
+        {
+                "id": "286d-f37d",
+                "task_id": "122c-f655",
+                "task_title": "PPT Slide Outline Review",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784800800000
+        },
+        {
+                "id": "ff00-d993",
+                "task_id": "122c-f655",
+                "task_title": "PPT Slide Outline Review",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784826000000
+        },
+        {
+                "id": "c443-ae22",
+                "task_id": "a3e8-5d57",
+                "task_title": "Website Styling Refinement",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784797200000
+        },
+        {
+                "id": "0918-4b66",
+                "task_id": "a3e8-5d57",
+                "task_title": "Website Styling Refinement",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784800800000
+        },
+        {
+                "id": "9877-f815",
+                "task_id": "a3e8-5d57",
+                "task_title": "Website Styling Refinement",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784826000000
+        },
+        {
+                "id": "fb39-5781",
+                "task_id": "96cf-d4c9",
+                "task_title": "Contact Form Validation Tuning",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784797200000
+        },
+        {
+                "id": "d8b9-6f8a",
+                "task_id": "96cf-d4c9",
+                "task_title": "Contact Form Validation Tuning",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784800800000
+        },
+        {
+                "id": "e10e-79fe",
+                "task_id": "96cf-d4c9",
+                "task_title": "Contact Form Validation Tuning",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784826000000
+        },
+        {
+                "id": "7373-3d81",
+                "task_id": "86df-08dc",
+                "task_title": "Coded Pitch Slides (1-5)",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784797200000
+        },
+        {
+                "id": "0ee6-fc02",
+                "task_id": "86df-08dc",
+                "task_title": "Coded Pitch Slides (1-5)",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784800800000
+        },
+        {
+                "id": "75f2-742d",
+                "task_id": "86df-08dc",
+                "task_title": "Coded Pitch Slides (1-5)",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784826000000
+        },
+        {
+                "id": "011e-c277",
+                "task_id": "54e5-4134",
+                "task_title": "Business Viability Outline",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784883600000
+        },
+        {
+                "id": "70eb-213e",
+                "task_id": "54e5-4134",
+                "task_title": "Business Viability Outline",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784887200000
+        },
+        {
+                "id": "44ca-7aa3",
+                "task_id": "54e5-4134",
+                "task_title": "Business Viability Outline",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784912400000
+        },
+        {
+                "id": "3fe7-6ad5",
+                "task_id": "67b2-7620",
+                "task_title": "Design PPT Visual Assets",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784883600000
+        },
+        {
+                "id": "6983-8290",
+                "task_id": "67b2-7620",
+                "task_title": "Design PPT Visual Assets",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784887200000
+        },
+        {
+                "id": "36b8-9f50",
+                "task_id": "67b2-7620",
+                "task_title": "Design PPT Visual Assets",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784912400000
+        },
+        {
+                "id": "8f10-ddfd",
+                "task_id": "e483-c015",
+                "task_title": "Layout Adjustments For Slide Views",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784883600000
+        },
+        {
+                "id": "4de6-ff43",
+                "task_id": "e483-c015",
+                "task_title": "Layout Adjustments For Slide Views",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784887200000
+        },
+        {
+                "id": "e0d3-6cd6",
+                "task_id": "e483-c015",
+                "task_title": "Layout Adjustments For Slide Views",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784912400000
+        },
+        {
+                "id": "75c2-207a",
+                "task_id": "c1df-399c",
+                "task_title": "Coded Pitch Slides (6-10)",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784883600000
+        },
+        {
+                "id": "e296-97e2",
+                "task_id": "c1df-399c",
+                "task_title": "Coded Pitch Slides (6-10)",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784887200000
+        },
+        {
+                "id": "f95f-126c",
+                "task_id": "c1df-399c",
+                "task_title": "Coded Pitch Slides (6-10)",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784912400000
+        },
+        {
+                "id": "1851-a673",
+                "task_id": "2d74-1f57",
+                "task_title": "Mock Presentation Dry-Run",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784970000000
+        },
+        {
+                "id": "a94e-95af",
+                "task_id": "2d74-1f57",
+                "task_title": "Mock Presentation Dry-Run",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784973600000
+        },
+        {
+                "id": "5493-fe7a",
+                "task_id": "2d74-1f57",
+                "task_title": "Mock Presentation Dry-Run",
+                "user_name": "Harish",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784998800000
+        },
+        {
+                "id": "d0c6-9c88",
+                "task_id": "108c-f624",
+                "task_title": "Static Web Image Optimizing",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784970000000
+        },
+        {
+                "id": "b2a0-90b9",
+                "task_id": "108c-f624",
+                "task_title": "Static Web Image Optimizing",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784973600000
+        },
+        {
+                "id": "ea7a-42d4",
+                "task_id": "108c-f624",
+                "task_title": "Static Web Image Optimizing",
+                "user_name": "Keerthika",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784998800000
+        },
+        {
+                "id": "04ae-112b",
+                "task_id": "e007-5c83",
+                "task_title": "Fix Next.js Build Warnings",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784970000000
+        },
+        {
+                "id": "f640-a60a",
+                "task_id": "e007-5c83",
+                "task_title": "Fix Next.js Build Warnings",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784973600000
+        },
+        {
+                "id": "1985-6d95",
+                "task_id": "e007-5c83",
+                "task_title": "Fix Next.js Build Warnings",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784998800000
+        },
+        {
+                "id": "553a-5635",
+                "task_id": "3923-af5c",
+                "task_title": "Refine Slides Post Dry-Run",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1784970000000
+        },
+        {
+                "id": "60e8-eeb7",
+                "task_id": "3923-af5c",
+                "task_title": "Refine Slides Post Dry-Run",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1784973600000
+        },
+        {
+                "id": "ed28-ee71",
+                "task_id": "3923-af5c",
+                "task_title": "Refine Slides Post Dry-Run",
+                "user_name": "Subhaharini",
+                "from_status": "In Progress",
+                "to_status": "Done",
+                "timestamp": 1784998800000
+        },
+        {
+                "id": "45d2-cfc8",
+                "task_id": "6725-6937",
+                "task_title": "Lead Client Demo Meeting",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785142800000
+        },
+        {
+                "id": "dca5-49a6",
+                "task_id": "6725-6937",
+                "task_title": "Lead Client Demo Meeting",
+                "user_name": "Harish",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1785146400000
+        },
+        {
+                "id": "6a8b-9b3a",
+                "task_id": "f5f3-fe67",
+                "task_title": "Implement Client Feedback Tweaks",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785142800000
+        },
+        {
+                "id": "c84f-4952",
+                "task_id": "f5f3-fe67",
+                "task_title": "Implement Client Feedback Tweaks",
+                "user_name": "Keerthika",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1785146400000
+        },
+        {
+                "id": "da4b-72c9",
+                "task_id": "0596-903d",
+                "task_title": "Animate Live UI Hovers",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785142800000
+        },
+        {
+                "id": "1037-e06d",
+                "task_id": "0596-903d",
+                "task_title": "Animate Live UI Hovers",
+                "user_name": "Akilan",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1785146400000
+        },
+        {
+                "id": "815b-2202",
+                "task_id": "0596-903d",
+                "task_title": "Animate Live UI Hovers",
+                "user_name": "Akilan",
+                "from_status": "In Progress",
+                "to_status": "Code Review",
+                "timestamp": 1785168000000
+        },
+        {
+                "id": "ded9-69d4",
+                "task_id": "1999-7fa4",
+                "task_title": "Compile Client Meeting Notes",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785142800000
+        },
+        {
+                "id": "e55e-8f11",
+                "task_id": "1999-7fa4",
+                "task_title": "Compile Client Meeting Notes",
+                "user_name": "Subhaharini",
+                "from_status": "Backlog",
+                "to_status": "In Progress",
+                "timestamp": 1785146400000
+        },
+        {
+                "id": "7a72-08ec",
+                "task_id": "4bac-c15c",
+                "task_title": "Consolidate Report Outline",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785229200000
+        },
+        {
+                "id": "285c-c3f1",
+                "task_id": "946b-94e7",
+                "task_title": "Draft Developer Documentation",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785229200000
+        },
+        {
+                "id": "95d9-5e17",
+                "task_id": "d1d0-e7ef",
+                "task_title": "Setup Vercel Deployment Link",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785229200000
+        },
+        {
+                "id": "60f9-623f",
+                "task_id": "38d5-eccb",
+                "task_title": "Draft Report Intro & Scope",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785229200000
+        },
+        {
+                "id": "0b2f-a2d8",
+                "task_id": "a360-7bd2",
+                "task_title": "Review Team Report Drafts",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785315600000
+        },
+        {
+                "id": "8169-1ed5",
+                "task_id": "3757-61aa",
+                "task_title": "Compile Personal SDE Logs",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785315600000
+        },
+        {
+                "id": "d57c-b55b",
+                "task_id": "baae-2671",
+                "task_title": "Live Link Post-Deploy Test",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785315600000
+        },
+        {
+                "id": "04ae-1f28",
+                "task_id": "222f-4f9d",
+                "task_title": "Compile Full Internship Report",
+                "user_name": "Harish",
+                "from_status": "None (Created)",
+                "to_status": "Backlog",
+                "timestamp": 1785315600000
+        }
+];
+
     // ═══════ CONFIG ═══════
     const TEAM = [
         { id: 'ceo',   name: 'Tamizharasan',   role: 'CEO',       color: '#6366F1', initials: 'TA', password: 'ceo@123' },
@@ -98,20 +3159,10 @@ export default function Home() {
     // ═══════ STORAGE ═══════
     async function loadTasks() {
         try {
-            const res = await fetch('/api/tasks');
-            if (res.ok) {
-                tasks = await res.json();
-            } else {
-                throw new Error('Neon DB load failed');
-            }
-        } catch (e) {
-            console.warn('Neon tasks load failed, falling back to LocalStorage:', e);
-            try {
-                const data = localStorage.getItem(STORAGE_KEY);
-                tasks = data ? JSON.parse(data) : [];
-            } catch {
-                tasks = [];
-            }
+            const data = localStorage.getItem(STORAGE_KEY);
+            tasks = data ? JSON.parse(data) : [];
+        } catch {
+            tasks = [];
         }
 
         // Migrate array assignees and activity
@@ -136,21 +3187,6 @@ export default function Home() {
 
     function saveTasks(singleTaskToSync = null) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-        if (singleTaskToSync) {
-            fetch('/api/tasks', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(singleTaskToSync)
-            }).catch(err => console.error('Neon Task Sync Error:', err));
-        } else {
-            tasks.forEach(t => {
-                fetch('/api/tasks', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(t)
-                }).catch(err => console.error('Neon Task Sync Error:', err));
-            });
-        }
     }
 
     function loadSession() {
@@ -175,8 +3211,10 @@ export default function Home() {
 
     // ═══════ SEED DATA ═══════
     function seedTasks() {
-        tasks = [];
-        saveTasks();
+        tasks = [...SEED_TASKS];
+        statusLogs = [...SEED_STATUS_LOGS];
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+        localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
     }
 
     // ═══════ RENDER: LOGIN ═══════
@@ -790,9 +3828,7 @@ export default function Home() {
         if (!deleteTargetId) return;
         const targetId = deleteTargetId;
         tasks = tasks.filter(t => t.id !== targetId);
-        localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
-        fetch(`/api/tasks/${targetId}`, { method: 'DELETE' })
-            .catch(err => console.error('Neon Task Delete Error:', err));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
         closeDeleteModal();
         renderBoard();
         showToast('Task deleted', 'error');
@@ -1017,8 +4053,7 @@ export default function Home() {
                     const pinId = pin.id;
                     pins = pins.filter(p => p.id !== pinId);
                     localStorage.setItem(PINS_KEY, JSON.stringify(pins));
-                    fetch(`/api/pins/${pinId}`, { method: 'DELETE' })
-                        .catch(err => console.error('Neon delete pin error:', err));
+                    // local storage delete only
                     renderPins();
                     showToast('Pin removed', 'info');
                 });
@@ -1402,35 +4437,25 @@ export default function Home() {
     // ═══════ UPGRADE FEATURES (MULTIPLE ASSIGNEES, AUTO ACTIONS, DAILY STATUS) ═══════
     async function loadLogs() {
         try {
-            const [updatesRes, statusRes, onlineRes, pinsRes] = await Promise.all([
-                fetch('/api/daily-updates'),
-                fetch('/api/status-logs'),
-                fetch('/api/online-logs'),
-                fetch('/api/pins')
-            ]);
-            
-            if (updatesRes.ok) dailyUpdates = await updatesRes.json();
-            if (statusRes.ok) statusLogs = await statusRes.json();
-            if (onlineRes.ok) onlineLogs = await onlineRes.json();
-            if (pinsRes.ok) pins = await pinsRes.json();
-        } catch (e) {
-            console.warn('Neon logs load failed, falling back to LocalStorage:', e);
-            try {
-                dailyUpdates = JSON.parse(localStorage.getItem(STATUS_UPDATES_KEY)) || [];
-                statusLogs = JSON.parse(localStorage.getItem(STATUS_LOG_KEY)) || [];
-                onlineLogs = JSON.parse(localStorage.getItem(ONLINE_LOG_KEY)) || [];
-                pins = JSON.parse(localStorage.getItem(PINS_KEY)) || [];
-            } catch {
-                dailyUpdates = [];
-                statusLogs = [];
-                onlineLogs = [];
-                pins = [];
-            }
+            dailyUpdates = JSON.parse(localStorage.getItem(STATUS_UPDATES_KEY)) || [];
+            statusLogs = JSON.parse(localStorage.getItem(STATUS_LOG_KEY)) || [];
+            onlineLogs = JSON.parse(localStorage.getItem(ONLINE_LOG_KEY)) || [];
+            pins = JSON.parse(localStorage.getItem(PINS_KEY)) || [];
+        } catch {
+            dailyUpdates = [];
+            statusLogs = [];
+            onlineLogs = [];
+            pins = [];
         }
         
         if (pins.length === 0) {
             pins = SEED_PINS;
             savePins();
+        }
+
+        if (statusLogs.length === 0) {
+            statusLogs = [...SEED_STATUS_LOGS];
+            localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
         }
 
         const badge = byId('pinCountBadge');
@@ -1441,50 +4466,18 @@ export default function Home() {
 
     function saveDailyUpdates(singleUpdate = null) {
         localStorage.setItem(STATUS_UPDATES_KEY, JSON.stringify(dailyUpdates));
-        const itemToSync = singleUpdate || (dailyUpdates.length > 0 ? dailyUpdates[0] : null);
-        if (itemToSync) {
-            fetch('/api/daily-updates', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(itemToSync)
-            }).catch(err => console.error('Neon save daily update error:', err));
-        }
     }
 
     function saveStatusLogs(singleLog = null) {
         localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
-        const itemToSync = singleLog || (statusLogs.length > 0 ? statusLogs[0] : null);
-        if (itemToSync) {
-            fetch('/api/status-logs', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(itemToSync)
-            }).catch(err => console.error('Neon save status log error:', err));
-        }
     }
 
     function saveOnlineLogs(singleLog = null) {
         localStorage.setItem(ONLINE_LOG_KEY, JSON.stringify(onlineLogs));
-        const itemToSync = singleLog || (onlineLogs.length > 0 ? onlineLogs[0] : null);
-        if (itemToSync) {
-            fetch('/api/online-logs', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(itemToSync)
-            }).catch(err => console.error('Neon save online log error:', err));
-        }
     }
 
     function savePins(singlePin = null) {
         localStorage.setItem(PINS_KEY, JSON.stringify(pins));
-        const itemToSync = singlePin || (pins.length > 0 ? pins[0] : null);
-        if (itemToSync) {
-            fetch('/api/pins', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(itemToSync)
-            }).catch(err => console.error('Neon save pin error:', err));
-        }
     }
 
     function renderAvatarStack(assigneeIds) {
