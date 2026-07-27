@@ -3165,6 +3165,14 @@ export default function Home() {
             tasks = [];
         }
 
+        // Validate tasks. If any task is malformed (missing id, title, or status), reset local storage.
+        const hasMalformed = tasks.some(t => !t.id || !t.title || !t.status);
+        if (hasMalformed) {
+            console.warn("Malformed tasks detected in localStorage. Clearing and re-seeding...");
+            localStorage.removeItem(STORAGE_KEY);
+            tasks = [];
+        }
+
         // Migrate array assignees and activity
         tasks.forEach(t => {
             if (t.assignee && !t.assignees) {
