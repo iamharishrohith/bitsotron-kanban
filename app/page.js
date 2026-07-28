@@ -3165,8 +3165,12 @@ export default function Home() {
             tasks = [];
         }
 
+        if (!Array.isArray(tasks)) {
+            tasks = [];
+        }
+
         // Validate tasks. If any task is malformed (missing id, title, or status), reset local storage.
-        const hasMalformed = tasks.some(t => !t.id || !t.title || !t.status);
+        const hasMalformed = tasks.some(t => !t || !t.id || !t.title || !t.status);
         if (hasMalformed) {
             console.warn("Malformed tasks detected in localStorage. Clearing and re-seeding...");
             localStorage.removeItem(STORAGE_KEY);
@@ -3194,7 +3198,9 @@ export default function Home() {
     }
 
     function saveTasks(singleTaskToSync = null) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+        } catch { /* ignore */ }
     }
 
     function loadSession() {
@@ -3202,18 +3208,29 @@ export default function Home() {
             const data = sessionStorage.getItem(SESSION_KEY);
             if (data) {
                 currentUser = JSON.parse(data);
-                return true;
+                if (currentUser && currentUser.id && getMember(currentUser.id)) {
+                    return true;
+                }
             }
         } catch { /* ignore */ }
+        currentUser = null;
         return false;
     }
 
     function saveSession() {
-        sessionStorage.setItem(SESSION_KEY, JSON.stringify(currentUser));
+        try {
+            if (currentUser) {
+                sessionStorage.setItem(SESSION_KEY, JSON.stringify(currentUser));
+            } else {
+                sessionStorage.removeItem(SESSION_KEY);
+            }
+        } catch { /* ignore */ }
     }
 
     function clearSession() {
-        sessionStorage.removeItem(SESSION_KEY);
+        try {
+            sessionStorage.removeItem(SESSION_KEY);
+        } catch { /* ignore */ }
         currentUser = null;
     }
 
@@ -3288,7 +3305,7 @@ export default function Home() {
 
     function attemptLogin() {
         if (!selectedLoginUser) return;
-        const password = byId('loginPassword').value;
+        const password = byId('loginPassword').value.trim();
         const errorEl = byId('loginError');
 
         if (password === selectedLoginUser.password) {
@@ -4276,10 +4293,15 @@ export default function Home() {
             const data = localStorage.getItem(CHAT_KEY);
             chats = data ? JSON.parse(data) : [];
         } catch { chats = []; }
+        if (!Array.isArray(chats)) {
+            chats = [];
+        }
     }
 
     function saveChats() {
-        localStorage.setItem(CHAT_KEY, JSON.stringify(chats));
+        try {
+            localStorage.setItem(CHAT_KEY, JSON.stringify(chats));
+        } catch { /* ignore */ }
     }
 
     function loadOnlineStatuses() {
@@ -4287,6 +4309,9 @@ export default function Home() {
             const data = localStorage.getItem(ONLINE_KEY);
             onlineUsers = data ? JSON.parse(data) : {};
         } catch { onlineUsers = {}; }
+        if (typeof onlineUsers !== 'object' || onlineUsers === null || Array.isArray(onlineUsers)) {
+            onlineUsers = {};
+        }
     }
 
     function saveOnlineStatus() {
@@ -4445,10 +4470,17 @@ export default function Home() {
     // ═══════ UPGRADE FEATURES (MULTIPLE ASSIGNEES, AUTO ACTIONS, DAILY STATUS) ═══════
     async function loadLogs() {
         try {
-            dailyUpdates = JSON.parse(localStorage.getItem(STATUS_UPDATES_KEY)) || [];
-            statusLogs = JSON.parse(localStorage.getItem(STATUS_LOG_KEY)) || [];
-            onlineLogs = JSON.parse(localStorage.getItem(ONLINE_LOG_KEY)) || [];
-            pins = JSON.parse(localStorage.getItem(PINS_KEY)) || [];
+            const updatesVal = JSON.parse(localStorage.getItem(STATUS_UPDATES_KEY));
+            dailyUpdates = Array.isArray(updatesVal) ? updatesVal : [];
+            
+            const statusVal = JSON.parse(localStorage.getItem(STATUS_LOG_KEY));
+            statusLogs = Array.isArray(statusVal) ? statusVal : [];
+            
+            const onlineVal = JSON.parse(localStorage.getItem(ONLINE_LOG_KEY));
+            onlineLogs = Array.isArray(onlineVal) ? onlineVal : [];
+            
+            const pinsVal = JSON.parse(localStorage.getItem(PINS_KEY));
+            pins = Array.isArray(pinsVal) ? pinsVal : [];
         } catch {
             dailyUpdates = [];
             statusLogs = [];
@@ -4463,7 +4495,9 @@ export default function Home() {
 
         if (statusLogs.length === 0) {
             statusLogs = [...SEED_STATUS_LOGS];
-            localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
+            try {
+                localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
+            } catch { /* ignore */ }
         }
 
         const badge = byId('pinCountBadge');
@@ -4473,19 +4507,27 @@ export default function Home() {
     }
 
     function saveDailyUpdates(singleUpdate = null) {
-        localStorage.setItem(STATUS_UPDATES_KEY, JSON.stringify(dailyUpdates));
+        try {
+            localStorage.setItem(STATUS_UPDATES_KEY, JSON.stringify(dailyUpdates));
+        } catch { /* ignore */ }
     }
 
     function saveStatusLogs(singleLog = null) {
-        localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
+        try {
+            localStorage.setItem(STATUS_LOG_KEY, JSON.stringify(statusLogs));
+        } catch { /* ignore */ }
     }
 
     function saveOnlineLogs(singleLog = null) {
-        localStorage.setItem(ONLINE_LOG_KEY, JSON.stringify(onlineLogs));
+        try {
+            localStorage.setItem(ONLINE_LOG_KEY, JSON.stringify(onlineLogs));
+        } catch { /* ignore */ }
     }
 
     function savePins(singlePin = null) {
-        localStorage.setItem(PINS_KEY, JSON.stringify(pins));
+        try {
+            localStorage.setItem(PINS_KEY, JSON.stringify(pins));
+        } catch { /* ignore */ }
     }
 
     function renderAvatarStack(assigneeIds) {
@@ -4654,7 +4696,8 @@ export default function Home() {
     function checkStatusRequests() {
         if (!currentUser) return;
         try {
-            const requests = JSON.parse(localStorage.getItem(STATUS_REQUESTS_KEY)) || {};
+            const requestsVal = JSON.parse(localStorage.getItem(STATUS_REQUESTS_KEY));
+            const requests = (requestsVal && typeof requestsVal === 'object' && !Array.isArray(requestsVal)) ? requestsVal : {};
             const lastSubmit = parseInt(localStorage.getItem('last_status_submit_' + currentUser.id) || '0');
             const requestTime = requests[currentUser.id] || 0;
             
@@ -4662,11 +4705,13 @@ export default function Home() {
             if (requestTime > lastSubmit) {
                 if (indicator) indicator.classList.remove('hidden');
                 
-                if (!sessionStorage.getItem('status_prompted_this_session')) {
-                    sessionStorage.setItem('status_prompted_this_session', 'true');
-                    toggleStatusSidebar(true);
-                    openDailyStatusModal();
-                }
+                try {
+                    if (!sessionStorage.getItem('status_prompted_this_session')) {
+                        sessionStorage.setItem('status_prompted_this_session', 'true');
+                        toggleStatusSidebar(true);
+                        openDailyStatusModal();
+                    }
+                } catch { /* ignore */ }
             } else {
                 if (indicator) indicator.classList.add('hidden');
             }
